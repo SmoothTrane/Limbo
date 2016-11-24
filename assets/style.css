@@ -2,6 +2,7 @@ html, body{
 	width: 100% !important;
 	height:100% !important;
 	font-family:'Open Sans', sans-serif ;
+	background-color: #2AB68;
 }
 
 h1{
@@ -225,4 +226,16 @@ height: 40%;
 .remove{
 	float: right;
 	cursor: pointer;
+}
+
+
+
+
+td, th{
+	border-top: 2.9px solid black !important;
+}
+
+.navbar{
+	background-color: #ECECEC !important;
+	border-color:#ECECEC !important;
 }

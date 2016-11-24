@@ -27,7 +27,7 @@ function addStuff($room, $owner, $status, $description){
 global $dbc;
 
 
-$query = "INSERT INTO stuff(create_date, room,status, description) VALUES (NOW(), '$room',  '$status', '$description')";
+$query = "INSERT INTO stuff(create_date, room,status, description, owner) VALUES (NOW(), '$room',  '$status', '$description', '$owner')";
 $results = mysqli_query($dbc, $query);
 if(!$results){
 
