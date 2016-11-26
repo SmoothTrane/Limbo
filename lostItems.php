@@ -3,11 +3,11 @@
 require('controllers.php');
 require('connect_db.php');
 require("quickLinkPage.php");
-$foundItems = getRecordsByField("stuff", "status", "lost");
+$lostItems = getRecordsByField("stuff", "status", "lost");
 
-if($foundItems){
-    echo '<h1>Lost Items </h1>';
-    echo '<table class ="table">';
+if($lostItems){
+    echo '<h1>Found Items </h1>';
+    echo '<table class="table">';
     echo '<tr>';
     echo '<th>ID</th>';
     echo '<th>Location ID</th>';
@@ -20,16 +20,17 @@ if($foundItems){
     echo '</tr>';
     
     
-    while($row = mysqli_fetch_array($foundItems, MYSQLI_ASSOC)){
+ 
+    while($row = mysqli_fetch_array($lostItems, MYSQLI_ASSOC)){
     	echo '<tr class="data-row">';
-    	echo '<td>' .$row['id'] . '</td>';
-    	echo '<td>' .$row['location_id'] . '</td>';
-    	echo '<td>' .$row['description'] . '</td>';
-    	echo '<td>' .$row['create_date'] . '</td>';
-    	echo '<td>' .$row['update_date'] . '</td>';
-    	echo '<td>' .$row['room'] . '</td>';
-    	echo '<td>' .$row['owner'] . '</td>';
-    	echo '<td>' .$row['finder'] . '</td>';
+    	echo '<td class="id">' .$row['id'] . '</td>';
+    	echo '<td class="lid">' .$row['location_id'] . '</td>';
+    	echo '<td class = "desc">' .$row['description'] . '</td>';
+    	echo '<td class="create">' .$row['create_date'] . '</td>';
+    	echo '<td class="update">' .$row['update_date'] . '</td>';
+    	echo '<td class="room">' .$row['room'] . '</td>';
+    	echo '<td class="owner">' .$row['owner'] . '</td>';
+    	echo '<td class="finder">' .$row['finder'] . '</td>';
     	echo '</tr>';
     }
     echo '</table>';
@@ -37,24 +38,19 @@ if($foundItems){
 }
 
 
-
 ?>
-
-
 
 <div id="main-container">
   <div class="card">
-    <div class="card-title">Finder</div>
+    <div class="card-title"><span id="title-text"> </span> <span class="remove glyphicon glyphicon-remove"></span></div>
       <div class="card-content">
         
-        <h2>Item Name</h2>
-        <p>Description</p>
-        
+        <h2></h2>
+
 
         
     </div>
             <div class="card-footer">
-          <span>Location</span>
           <span>Create Date</span>
           </div>
   </div>

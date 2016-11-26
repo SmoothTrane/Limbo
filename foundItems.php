@@ -42,17 +42,15 @@ if($foundItems){
 
 <div id="main-container">
   <div class="card">
-    <div class="card-title">Finder <span class="remove glyphicon glyphicon-remove"></span></div>
+    <div class="card-title"><span id="title-text"> </span> <span class="remove glyphicon glyphicon-remove"></span></div>
       <div class="card-content">
         
-        <h2>Item Name</h2>
-        <p>Description</p>
-        
+        <h2></h2>
+
 
         
     </div>
             <div class="card-footer">
-          <span>Location</span>
           <span>Create Date</span>
           </div>
   </div>

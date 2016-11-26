@@ -32,11 +32,10 @@
    
     <ul class="nav navbar-nav">
       
-<li><a href="/landingPageWithLinks.php"><span id="home">Limbo</a> </span></li>
+<li><a href="/"><span id="home">Limbo</a> </span></li>
 <li><a href="/lostItems.php">Lost Items</a></li>
 <li><a href="/foundItems.php">Found Items</a></li>
-<li><a href="/addnewlostitem.php">Add Lost Item</a></li>
-<li><a href="/addnewfounditem.php">Add Found Item</a></li>
+<li><a href="/addnewitem.php">New Item</a></li>
     </ul>
 
   </div>

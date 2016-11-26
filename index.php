@@ -33,11 +33,6 @@ require("quickLinkPage.php");
         <li> <img id="jersey" src="basketball-jersey.png"/> </li>
         </ul>
         
-       
-
-
-
-        
         </div>
      </div>
      </div>

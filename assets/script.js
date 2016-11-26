@@ -41,7 +41,15 @@ $('.data-row').click(function(){
   row.css('background-color', '#D2D7D3');
   
     $("#main-container").fadeIn(function(){
+      var card = $(this).children(".card");
+      console.log(card);
      var desc = row.children(".desc").text();
+     var finder = row.children(".finder").text();
+     var date = row.children(".create").text();
+     card.find("h2").text(desc);
+     card.find("#title-text").text(finder);
+     
+   
      //TODO UPDATE CARD WITH TABLE INFORMATION
     });
   
@@ -61,5 +69,17 @@ $('.data-row').click(function(){
   
   
   
-})
+});
 
+$(function(){
+  $(".switch-btn").click(function(){
+    var currentBtn = $(this);
+    var selectedBtn = $(".select");
+    selectedBtn.removeClass("select");
+    $(this).addClass("select");
+    console.log(selectedBtn)
+    
+  })
+  
+  
+});

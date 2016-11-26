@@ -2,7 +2,8 @@ html, body{
 	width: 100% !important;
 	height:100% !important;
 	font-family:'Open Sans', sans-serif ;
-	background-color: #2AB68;
+	background-color: #FADAA3;
+;
 }
 
 h1{
@@ -48,12 +49,12 @@ color: black;
 }
 
 .claimed{
-background-color: #00B16A;
-border-radius: 5px;
-cursor: pointer;
-padding: 5px;
-width: 10px;
-color: white;
+	background-color: #00B16A;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 5px;
+	width: 10px;
+	color: white;
 }
 
 .lost{
@@ -75,14 +76,13 @@ color: white;
 .landing-main{
 	
 	height: 100%;
-	background-color: #FADAA3;
 
 
 }
 
 .landing-two{
 
-	background-color: #FADAA3;
+	/*background-color: #FADAA3;*/
 	height: 80%;
 	text-align: center;
 }
@@ -176,6 +176,10 @@ height: 40%;
 	overflow: auto;
 	background-color: rgba(0,0,0, 0.4);
 }
+
+.add-item-container{
+
+}
 .card{
   background: #FFFFFF;
   display:flex;
@@ -184,6 +188,8 @@ height: 40%;
   width:330px;
   box-shadow: 0 5px 5px rgba(50, 50, 50,.10), 0 5px 5px rgba(50, 50, 50,.10);
   border-radius: 3px;
+  margin: 15% auto;
+	width: 20%;
 }
 
 
@@ -219,10 +225,8 @@ height: 40%;
 
 
 
-.card{
-	margin: 15% auto;
-	width: 20%;
-}
+
+
 .remove{
 	float: right;
 	cursor: pointer;
@@ -231,11 +235,68 @@ height: 40%;
 
 
 
-td, th{
-	border-top: 2.9px solid black !important;
-}
+/*td, th{*/
+/*	border-top: 2.9px solid black !important;*/
+/*}*/
 
 .navbar{
 	background-color: #ECECEC !important;
 	border-color:#ECECEC !important;
 }
+
+.add-form{
+
+  background: #FFFFFF;
+  max-width: 60%;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+
+.form-card{
+	width: 70%;
+
+}
+
+.form-group{
+	margin: 0 auto;
+}
+
+.add-btn{
+	margin-top: 20px;
+	width: 20%;
+	background-color: #FF7055;
+	color: white;
+
+}
+
+
+button.select{
+	background-color: #2ECC71;
+	color: white;
+}
+
+.radio-wrapper{
+text-align: center;	
+
+}
+
+.switch-btn{
+	width: 20%;
+
+	margin-top: 20px;
+}
+
+.radio-wrapper button{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+.form-card{
+	margin: 2% auto;
+}
+/*.form-wrapper{*/
+/*	background-color: white;*/
+/*	height: 50;*/
+/*}*/
