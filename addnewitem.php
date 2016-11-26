@@ -13,9 +13,9 @@
     {
         
         # addStuff("301", "Joe Mark", "Lost", "Gold iPhone 6");
-        $room=trim($_POST["room"]);
-        $owner=trim($_POST["owner"]);
-        $description=trim($_POST["description"]);
+        $room = trim($_POST["room"]);
+        $owner = trim($_POST["owner"]);
+        $description = trim($_POST["description"]);
 
         if(!empty($room) && !empty($owner) && !empty($description)){
             addStuff($room, $owner, 'Found', $description);
@@ -43,25 +43,53 @@
         
  <form action="addnewfounditem.php" class="add-form" method="POST">
     
-<div class="form-group form-content">
-        <label for="input-room">Room</label>
-        <input type="text" class="form-control" name="room">    
-        </div>
-     <div class="form-group form-content">
-        <label for="input-owner">Owner</label>
-        <input type="text" class="form-control" name="owner">
-    </div>
-    
     <div class="form-group form-content">
-        <label for="input-description">Description</label>
-        <textarea   name="description" class="form-control" required> </textarea>
+            <label for="input-room">Room</label>
+            <input type="text" class="form-control" name="room">    
+            </div>
+        
+        
+        <div class="form-group form-content">
+            <label for="input-description">Description</label>
+            <textarea   name="description" class="form-control" required> </textarea>
+        </div>
+        
+        <div class="form-group">
+        <label for="input-location">Location</label>
+        <br/>
+    <div class="select-style ">
+          <select class="form-control"> Select Location
+            <option value="volvo">Select Location</option>
+            <option value="Donelly Hall">Donelly Hall</option>
+            <option value="mercedes">Champagnat Hall</option>
+            <option value="mercedes">Upper New</option>
+            <option value="mercedes">Lower New</option>
+            <option value="mercedes">Upper West</option>
+            <option value="mercedes">Lower West</option>
+            <option value="mercedes">Hancock Center</option>
+            <option value="mercedes">Murray Student Center</option>
+
+
+
+
+
+            <option value="audi">Audi</option>
+          </select>
+          </div>
     </div>
-    
-    
-   
-    
-  
-    <button type="submit" class="btn add-btn ">Submit</button>
+         <div class="form-group form-content">
+            <label for="input-owner">Owner</label>
+            <input type="text" class="form-control" name="owner">
+        </div>
+          <div class="form-group form-content">
+            <label for="input-owner">Finder</label>
+            <input type="text" class="form-control" name="finder">
+        </div>
+        
+       
+      
+      
+        <button type="submit" class="btn add-btn ">Submit</button>
 
     </form>
 

@@ -296,6 +296,39 @@ text-align: center;
 .form-card{
 	margin: 2% auto;
 }
+
+.select-style {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+    overflow: hidden;
+    background-color: #fff;
+
+    background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 100% 50%;
+}
+
+.select-style select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    margin: 0 auto;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    text-align: center;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+        
+}
+
+.select-style select:focus {
+    outline: none;
+}
+
+
 /*.form-wrapper{*/
 /*	background-color: white;*/
 /*	height: 50;*/

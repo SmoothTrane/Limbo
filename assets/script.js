@@ -76,10 +76,13 @@ $(function(){
     var currentBtn = $(this);
     var selectedBtn = $(".select");
     selectedBtn.removeClass("select");
-    $(this).addClass("select");
-    console.log(selectedBtn)
+    currentBtn.addClass("select");
     
-  })
+  
+    
+  });
+  
+  
   
   
 });
