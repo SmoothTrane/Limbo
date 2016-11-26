@@ -45,20 +45,20 @@
     
     <div class="form-group form-content">
             <label for="input-room">Room</label>
-            <input type="text" class="form-control" name="room">    
+            <input type="text" class="" name="room">    
             </div>
         
         
         <div class="form-group form-content">
             <label for="input-description">Description</label>
-            <textarea   name="description" class="form-control" required> </textarea>
+            <textarea   name="description" class="" required> </textarea>
         </div>
         
         <div class="form-group">
         <label for="input-location">Location</label>
         <br/>
-    <div class="select-style ">
-          <select class="form-control"> Select Location
+    <div class=" ">
+          <select class=""> Select Location
             <option value="volvo">Select Location</option>
             <option value="Donelly Hall">Donelly Hall</option>
             <option value="mercedes">Champagnat Hall</option>
@@ -79,11 +79,11 @@
     </div>
          <div class="form-group form-content">
             <label for="input-owner">Owner</label>
-            <input type="text" class="form-control" name="owner">
+            <input type="text" class="" name="owner">
         </div>
           <div class="form-group form-content">
             <label for="input-owner">Finder</label>
-            <input type="text" class="form-control" name="finder">
+            <input type="text" class="" name="finder">
         </div>
         
        
