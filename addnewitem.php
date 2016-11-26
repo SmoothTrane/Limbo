@@ -11,19 +11,20 @@
     if ($_SERVER['REQUEST_METHOD']=='POST')
 
     {
+        echo $_POST["owner"];
         
-        # addStuff("301", "Joe Mark", "Lost", "Gold iPhone 6");
-        $room = trim($_POST["room"]);
-        $owner = trim($_POST["owner"]);
-        $description = trim($_POST["description"]);
+        // # addStuff("301", "Joe Mark", "Lost", "Gold iPhone 6");
+        // $room = trim($_POST["room"]);
+        // $owner = trim($_POST["owner"]);
+        // $description = trim($_POST["description"]);
 
-        if(!empty($room) && !empty($owner) && !empty($description)){
-            addStuff($room, $owner, 'Found', $description);
-            echo '<p> Sucessful! <p>';
-        }
-        else{
-            echo '<p> Please complete the required fields! </p>';    
-        }
+        // if(!empty($room) && !empty($owner) && !empty($description)){
+        //     addStuff($room, $owner, 'Found', $description);
+        //     echo '<p> Sucessful! <p>';
+        // }
+        // else{
+        //     echo '<p> Please complete the required fields! </p>';    
+        // }
 
     }
 ?>
@@ -51,14 +52,14 @@
         
         <div class="form-group form-content">
             <label for="input-description">Description</label>
-            <textarea   name="description" class="" required> </textarea>
+            <textarea   name="description" class=""> </textarea>
         </div>
         
         <div class="form-group">
         <label for="input-location">Location</label>
         <br/>
     <div class=" ">
-          <select class=""> Select Location
+          <select class="" name="location"> Select Location
             <option value="volvo">Select Location</option>
             <option value="Donelly Hall">Donelly Hall</option>
             <option value="mercedes">Champagnat Hall</option>
@@ -68,6 +69,7 @@
             <option value="mercedes">Lower West</option>
             <option value="mercedes">Hancock Center</option>
             <option value="mercedes">Murray Student Center</option>
+              <option value="mercedes">Fontaine Hall</option>
 
 
 
@@ -89,7 +91,7 @@
        
       
       
-        <button type="submit" class="btn add-btn ">Submit</button>
+        <button type="submit" class="btn add-btn ">Add</button>
 
     </form>
 

@@ -113,9 +113,9 @@ row.children(".status")[0].innerHTML = "lost";
 });
 
 $(".found").click(function(){
-var row = $(this).closest("tr");
-var rowId = row.children(".id")[0].innerHTML;
-row.children(".status")[0].innerHTML = "found";
+    var row = $(this).closest("tr");
+    var rowId = row.children(".id")[0].innerHTML;
+    row.children(".status")[0].innerHTML = "found";
 
   $.ajax({
         url: "editItem.php",
@@ -126,15 +126,8 @@ row.children(".status")[0].innerHTML = "found";
         dataType: "text",
         success: function () {
                  
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-           alert("Error, try again!!");
         }
-
-
-
-
-});
+    });
 });
 
 

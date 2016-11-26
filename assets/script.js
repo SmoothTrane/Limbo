@@ -82,6 +82,33 @@ $(function(){
     
   });
   
+  $(".add-form").submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formData = $(this).serialize();
+    console.log(formData);
+    var status = $(".select").text().trim().toLowerCase();
+    
+    
+    $.ajax({
+      
+      url:"addnewitem.php",
+      type:"post",
+      data: formData,
+      dataType: "text",
+      success: function (){
+        alert("true");
+      }
+      
+      
+      
+      
+    });
+    
+    
+    
+  });
+  
   
   
   
