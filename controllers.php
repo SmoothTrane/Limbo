@@ -10,29 +10,25 @@ function getRecordsByField($entity, $field, $value){
 	if($results){
 		return $results;
 	}
-}
+ }
 function getAllStuff(){
 	global $dbc;
 	$query= "SELECT * from stuff";
 	$results = mysqli_query($dbc, $query);
 	return $results; 
-
-
-
-
-}
+ }
 
 
 function addStuff($room, $owner, $finder, $status, $description, $lid){
-global $dbc;
+	global $dbc;
 
 
-$query = "INSERT INTO stuff(create_date, room,status, description, owner, finder, location_id) VALUES (NOW(), '$room',  '$status', '$description', '$owner', '$finder', '$lid')";
-$results = mysqli_query($dbc, $query);
-if(!$results){
+	$query = "INSERT INTO stuff(create_date, room,status, description, owner, finder, location_id) VALUES (NOW(), '$room',  '$status', '$description', '$owner', '$finder', '$lid')";
+	$results = mysqli_query($dbc, $query);
+	if(!$results){
 
-echo 'Error adding item!';
-}
+		echo 'Error adding item!';
+   }
 
 
 }

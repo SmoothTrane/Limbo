@@ -121,22 +121,30 @@
         <br/>
     <div class=" ">
           <select id="location" class="" name="location"> Select Location
-            <option value="volvo">Select Location</option>
-            <option value="Donelly Hall">Donelly Hall</option>
-            <option value="Champagnat Hall">Champagnat Hall</option>
-            <option value="Upper New">Upper New</option>
-            <option value="Lower New">Lower New</option>
-            <option value="Upper West">Upper West</option>
-            <option value="Lower West">Lower West</option>
-            <option value="Hancock Center">Hancock Center</option>
-            <option value="Murray Student Center">Murray Student Center</option>
-            <option value="Fontaine Hall">Fontaine Hall</option>
-
-
-
-
-
-            <option value="audi">Audi</option>
+            <option value="1">McCann Arena</option>
+            <option value="2">Donelly Hall</option>
+            <option value="3">Champagnat Hall</option>
+            <option value="4">Upper New</option>
+            <option value="5">Lower New</option>
+            <option value="6">Upper Wes Cedar</option>
+            <option value="7">Lower West Cedar</option>
+            <option value="8">Hancock Center</option>
+            <option value="9">Murray Student Center</option>
+            <option value="10">The Byrne</option>
+            <option value="11">Leo Hall</option>
+             <option value="12">Marian Hall</option>
+             <option value="13">Sheahan Hall</option>
+             <option value="14">NorthEnd</option>
+             <option value="15">Dyson Center</option>
+             <option value="16">Lowell Thomas</option>
+             <option value="17">Upper Fulton Houses</option>
+             <option value="18">Lower Fulton Houses</option>
+             <option value="19">James A. Cannavino Library</option>
+             <option value="20">Steel Plant</option>
+             <option value="21">Saint Peter's</option>
+            <option value="22">Midrise Hall</option>
+            <option value="23">Foy Townhouses</option>
+            <option value="24">Cornell Boathouses</option>
           </select>
           </div>
     </div>
