@@ -241,7 +241,7 @@ height: 40%;
 
 .navbar{
 	background-color: #ECECEC !important;
-	border-color:#ECECEC !important;
+	border-bottom: 1px solid #bdc3c7;
 }
 
 .add-form{
@@ -373,6 +373,7 @@ text-align: center;
 	display: none;
 	
 }
+
 
 /*.form-wrapper{*/
 /*	background-color: white;*/

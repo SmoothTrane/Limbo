@@ -103,7 +103,8 @@ $(function(){
       data: formData,
       dataType: "text",
       success: function (){
-        alert("true");
+        $(".add-form")[0].reset();
+        showNotification(".card-content","success","You have successfuly added an item",true, 7000);
       }
       
       
@@ -119,8 +120,17 @@ $(function(){
   
   
   
-  function addAlert(status, message){
-    $
-  }
-  
+ function showNotification(element, type, msg, timeout, time){
+    $(element).prepend("<div class='alert alert-" + type + " alert-dismissible' role='alert'>" +
+          "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>" +
+         msg + "</div>");
+
+    if(timeout === undefined || timeout){
+        setTimeout(function(){
+            $(".alert").slideUp("slow", function(){
+                $(".alert .close").click();
+            });
+        }, (time === undefined ? 10000 : time));
+    }
+}
 });
