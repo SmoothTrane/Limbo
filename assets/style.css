@@ -186,7 +186,10 @@ height: 40%;
   flex-direction:column;
   box-sizing: border-box;
   width:330px;
-  box-shadow: 0 5px 5px rgba(50, 50, 50,.10), 0 5px 5px rgba(50, 50, 50,.10);
+   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+  
   border-radius: 3px;
   margin: 15% auto;
 	width: 20%;

@@ -36,10 +36,31 @@ id int primary key auto_increment,
 );
 
 INSERT into locations(name)
-values("Lowell Thomas"),
-	  ("Hancock"),
-	  ("Donelly"),
-	  ("Champagnat Hall");
+values("McCann Arena"),
+	  ("Donelly Hall"),
+	  ("Champagnat Hall"),
+	  ("Upper New"),
+	  ("Lower New"),
+	  ("Upper West Cedar"),
+	  ("Lower West Cedar"),
+	  ("Hancock Center"),
+	  ("Murray Student Center"),
+	  ("The Byrne"),
+	  ("Leo Hall"),
+	  ("Marian Hall"),
+	  ("Sheahan Hall"),
+	  ("Northend"),
+	  ("Dyson Center"),
+	  ("Lowell Thomas"),
+	  ("Upper Fulton Houses"),
+	  ("Lower Fulton Houses"),
+	  ("James A. Cannavino Library"),
+	  ("Steel Plant"),
+	  ("Saint Peter's"),
+	  ("Midrise Hall"),
+	  ("Foy Townhouses"),
+	  ("Cornell Boathouses");
+	  
 INSERT INTO stuff(location_id, description, room, owner, finder, create_date, update_date, status)
 VALUES(1,"iPhone 8", "Lobby", "", "Luke Smitts", "16:10:10 12:16:40", "00:00:00", "found"),
 	  (2,"Cubs hat", "310",  "Duke Charles", "", "16:10:10 12:16:30", "00:00:00", "lost"),

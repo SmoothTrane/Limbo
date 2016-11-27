@@ -13,16 +13,15 @@ require("quickLinkPage.php");
 
         <div class="content landing-main"> 
         <div class="inner-content">
-        <h1> Welcome To Limbo!
-</h1>
+      
 
-<h2>Discover various lost and found items on Marist College campus.</h2>
+<h2>Discover lost and found items on Marist College campus.</h2>
     
              <!-- iPhone icon by Icons8 -->
              
               <div class="field" id="searchform">
-		      <input type="text" id="searchterm" placeholder="Find an lost/found item" />
-		      <button type="button" id="search">Find</button>
+		      <input type="text" id="searchterm" placeholder="Search for an item" />
+		      <button type="button" id="search">Search</button>
 		      
 		      </div>
              
