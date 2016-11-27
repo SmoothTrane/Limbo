@@ -365,13 +365,18 @@ text-align: center;
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
-.form-style-8 textarea{
+.add-form textarea{
     resize:none;
     overflow: hidden;
 }
-
+.lost-form{
+	display: none;
+	
+}
 
 /*.form-wrapper{*/
 /*	background-color: white;*/
 /*	height: 50;*/
 /*}*/
+
+

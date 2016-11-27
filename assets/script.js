@@ -42,7 +42,6 @@ $('.data-row').click(function(){
   
     $("#main-container").fadeIn(function(){
       var card = $(this).children(".card");
-      console.log(card);
      var desc = row.children(".desc").text();
      var finder = row.children(".finder").text();
      var date = row.children(".create").text();
@@ -73,10 +72,17 @@ $('.data-row').click(function(){
 
 $(function(){
   $(".switch-btn").click(function(){
-    var currentBtn = $(this);
-    var selectedBtn = $(".select");
-    selectedBtn.removeClass("select");
-    currentBtn.addClass("select");
+    var clickedBtn = $(this);
+    var currentBtn = $(".select");
+    
+    var currentFormName = currentBtn.text().trim().toLowerCase();
+    var nextFormName = clickedBtn.text().trim().toLowerCase();
+    $("."+currentFormName+"-form").fadeOut();
+    $("."+nextFormName+"-form").fadeIn();
+    
+    currentBtn.removeClass("select");
+    clickedBtn.addClass("select");
+    
     
   
     
@@ -86,9 +92,9 @@ $(function(){
     e.preventDefault();
     var form = $(this);
     var formData = $(this).serialize();
-    console.log(formData);
     var status = $(".select").text().trim().toLowerCase();
-    
+    formData+="&status="+status;
+    console.log(formData)
     
     $.ajax({
       
@@ -111,5 +117,10 @@ $(function(){
   
   
   
+  
+  
+  function addAlert(status, message){
+    $
+  }
   
 });

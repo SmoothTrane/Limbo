@@ -23,11 +23,11 @@ function getAllStuff(){
 }
 
 
-function addStuff($room, $owner, $status, $description){
+function addStuff($room, $owner, $finder, $status, $description){
 global $dbc;
 
 
-$query = "INSERT INTO stuff(create_date, room,status, description, owner) VALUES (NOW(), '$room',  '$status', '$description', '$owner')";
+$query = "INSERT INTO stuff(create_date, room,status, description, owner, finder) VALUES (NOW(), '$room',  '$status', '$description', '$owner', '$finder')";
 $results = mysqli_query($dbc, $query);
 if(!$results){
 
