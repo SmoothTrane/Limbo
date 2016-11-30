@@ -117,6 +117,31 @@ $(function(){
   });
   
   
+  $(".add-admin").submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formData = $(this).serialize();
+    alert(formData);
+    
+    $.ajax({
+      
+      url:"add_admin.php",
+      type:"post",
+      data: formData,
+      dataType: "text",
+      success: function (){
+        $(".add-admin")[0].reset();
+        showNotification(".card-content","success","You have successfuly added an admin",true, 7000);
+      }
+      
+      
+      
+      
+    });
+    
+  });
+  
+  
   
   
   $(function(){

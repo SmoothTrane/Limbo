@@ -39,7 +39,7 @@
               <button type="button" class="btn  switch-btn">Lost</button>
             </div>
         
- <form action="addnewfounditem.php" class="add-form found-form" method="POST">
+ <form action="addnewfounditem.php" class="add-form limbo-form found-form" method="POST">
     
     <div class="form-group form-content">
             <label for="input-room">Room</label>
@@ -100,7 +100,7 @@
 
 
 
- <form action="addnewfounditem.php" class="add-form lost-form" method="POST">
+ <form action="addnewfounditem.php" class="add-form limbo-form lost-form" method="POST">
     
     <div class="form-group form-content">
             <label for="input-room">Room</label>

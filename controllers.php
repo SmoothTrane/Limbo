@@ -73,6 +73,17 @@ function updateStuffStatus($id, $status){
 
 }
 
+function addUser($fname, $lname, $email, $role, $pass){
+	global $dbc; 
+	$query = "INSERT INTO users(first_name, last_name, email, role, pass) VALUES ('$fname', '$lname', '$email', '$role', SHA('$pass'))";
+	$results = mysqli_query($dbc, $query);
+	if(!$results){
+
+		echo 'Error adding user!';
+   }
+
+}
+
 
 function load($page = "admin_login.php"){
 	$url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);

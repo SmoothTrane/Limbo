@@ -1,8 +1,29 @@
 <?php
-session_start();
+    session_start();
 require('controllers.php');
 require('connect_db.php');
 require("quickLinkPage.php");
+
+if ($_SERVER['REQUEST_METHOD']=='POST')
+
+    {
+
+        
+        // # addStuff("joe", "mark", "joemark@marist.edu","admin");
+        $fname = trim($_POST["first_name"]);
+        $lname = trim($_POST["last_name"]);
+        $email = trim($_POST["email"]);
+        $role = trim($_POST["role"]);
+        $pass = trim($_POST["pass"]);
+
+        
+        
+      
+
+        addUser($fname, $lname, $email, $role, $pass);
+
+     
+    }
 
 ?>
 
@@ -17,7 +38,7 @@ require("quickLinkPage.php");
       <div class="card-content">
          
         
- <form action="addnewfounditem.php" class="add-form found-form" method="POST">
+ <form action="add_admin.php" class="add-admin limbo-form" method="POST">
      
      <div class="form-group form-content">
             <label for="input-first_name">First Name</label>
@@ -48,9 +69,9 @@ require("quickLinkPage.php");
         <br/>
     <div class=" ">
           <select id="" class="" name="role"> Select Role
-            <option value="1">Admin</option>
-            <option value="2">Super Admin</option>
-            <option value="3">User</option>
+            <option value="admin">Admin</option>
+            <option value="superadmin">Super Admin</option>
+            <option value="user">User</option>
           
           </select>
           </div>

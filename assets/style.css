@@ -247,7 +247,7 @@ height: 40%;
 	border-bottom: 1px solid #bdc3c7;
 }
 
-.add-form{
+.limbo-form{
 
   font-family: 'Open Sans Condensed', arial, sans;
     width: 500px;
@@ -344,17 +344,17 @@ text-align: center;
 
 
 
-.add-form input[type="text"],
-.add-form input[type="date"],
-.add-form input[type="datetime"],
-.add-form input[type="email"],
-.add-form input[type="number"],
-.add-form input[type="search"],
-.add-form input[type="time"],
-.add-form input[type="url"],
-.add-form input[type="password"],
-.add-form textarea,
-.add-form select 
+.limbo-form input[type="text"],
+.limbo-form input[type="date"],
+.limbo-form input[type="datetime"],
+.limbo-form input[type="email"],
+.limbo-form input[type="number"],
+.limbo-form input[type="search"],
+.limbo-form input[type="time"],
+.limbo-form input[type="url"],
+.limbo-form input[type="password"],
+.limbo-form textarea,
+.limbo-form select 
 {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -370,7 +370,7 @@ text-align: center;
     font: 16px Arial, Helvetica, sans-serif;
     height: 45px;
 }
-.add-form textarea{
+.limbo-form textarea{
     resize:none;
     overflow: hidden;
 }
