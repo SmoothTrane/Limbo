@@ -1,5 +1,5 @@
-
 <?php
+session_start();
 require('controllers.php');
 require('connect_db.php');
 require("quickLinkPage.php");

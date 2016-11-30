@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 global $dbc;
 
 require("connect_db.php");

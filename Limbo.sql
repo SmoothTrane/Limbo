@@ -10,11 +10,12 @@ user_id int not null auto_increment primary key,
 first_name varchar(20) not null,
 last_name varchar(40) not null,
 email varchar(60) unique not null,
+role set("admin", "superadmin", "user") DEFAULT "user",
 pass char(40) not null,
 reg_date TIMESTAMP not null default CURRENT_TIMESTAMP    
 );
-INSERT INTO users( first_name, last_name, email, pass)
-VALUES ("admin", "admin", "admin", SHA("admin"));
+INSERT INTO users( first_name, last_name, email, role, pass)
+VALUES ("admin", "admin", "admin", "superadmin", SHA("admin"));
 create table if not exists stuff(
 id int auto_increment primary key,
 location_id int not null,

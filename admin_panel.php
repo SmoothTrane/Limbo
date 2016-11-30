@@ -14,24 +14,57 @@
     }
    
 $stuff = getAllStuff();
+
+
+
+
+
+// if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//     echo 'test!!!!!!!!!!!!!!!!!!!!!!!!!';
+// }
+
+
+?>
+
+
+
+
+
+
+<div class="item-pane">
+     <div class="card-title item-title">
+ <h1>Items</h1>
+ </div>
+<div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="What you looking for?">
+</div>
+<span class="counter pull-right"></span>
+<table class="table">
+  <thead>
+     <tr>
+      <th>ID</th>
+    <th>Location ID</th>
+    <th>Create Date </th>
+    <th>Update Date</th>
+    <th>Room </th>
+    <th>Owner</th>
+    <th>Finder</th>
+    <th>Description</th>
+    <th>Status </th>
+    <th>Del</th>
+    <th>Found</th>
+    <th>Lost</th>
+    <th>Claimed</th>
+    </tr>
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+
+<?php
 if($stuff){
-    echo '<h1>Items </h1>';
-    echo '<table class="table panel-table">';
-    echo '<tr>';
-    echo '<th>ID</th>';
-    echo '<th>Location ID</th>';
-    echo '<th>Create Date </th>';
-    echo '<th>Update Date</th>';
-    echo '<th>Room </th>';
-    echo '<th>Owner</th>';
-    echo '<th>Finder</th>';
-    echo '<th>Description</th>';
-    echo '<th>Status </th>';
-    echo '<th>Del</th>';
-    echo '<th>Found</th>';
-    echo '<th>Lost</th>';
-    echo '<th>Claimed</th>';
-    echo '</tr>';
+
     
     
     while($row = mysqli_fetch_array($stuff, MYSQLI_ASSOC)){
@@ -51,19 +84,10 @@ if($stuff){
         echo '<td class="claimed setStatus"> SET CLAIMED </td>';
     	echo '</tr>';
     }
-    echo '</table>';
+
     
 }
-// if($_SERVER['REQUEST_METHOD'] == 'POST'){
-//     echo 'test!!!!!!!!!!!!!!!!!!!!!!!!!';
-// }
-
-
 ?>
-
-
-
-
 
 
 
