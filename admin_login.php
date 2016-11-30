@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <?php 
 
 global $dbc;
@@ -18,13 +15,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 list($isConnect, $data) = authenticate($e, $p);
 	
 	if($isConnect){
-	 	session_start();
+		session_start();
 	 	$_SESSION['user_id'] = $data['user_id'];
 	 	$_SESSION['first_name'] = $data['first_name'];
 	 	$_SESSION['last_name'] = $data['last_name'];
 	 	load("admin_panel.php");
-
-
 	}
 	else{
 		 echo '<P style=color:red>Login failed please try again.</P>' ;
@@ -32,11 +27,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	mysqli_close($dbc);
 
 }
-else{
-	// echo 'wtf';
-}
 ?>
-
+<!DOCTYPE html>
+<html>
 
 <h1> Admin Login
 </h1>

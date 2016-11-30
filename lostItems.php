@@ -5,22 +5,34 @@ require('connect_db.php');
 require("quickLinkPage.php");
 $lostItems = getRecordsByField("stuff", "status", "lost");
 
+
+
+?>
+
+<div class="item-pane">
+  
+    <div class="card-title item-title">
+      <h1>Found Items</h1>
+      
+    </div>
+  
+
+
+    <table class="table">
+    <tr>
+    <th>ID</th>
+    <th>Location ID</th>
+    <th>Description</th>
+    <th>Create Date </th>
+    <th>Update Date</th>
+    <th>Room </th>
+    <th>Owner</th>
+    <th>Finder</th>
+    </tr>
+  
+<?php
 if($lostItems){
-    echo '<h1>Found Items </h1>';
-    echo '<table class="table">';
-    echo '<tr>';
-    echo '<th>ID</th>';
-    echo '<th>Location ID</th>';
-    echo '<th>Description</th>';
-    echo '<th>Create Date </th>';
-    echo '<th>Update Date</th>';
-    echo '<th>Room </th>';
-    echo '<th>Owner</th>';
-    echo '<th>Finder</th>';
-    echo '</tr>';
-    
-    
- 
+
     while($row = mysqli_fetch_array($lostItems, MYSQLI_ASSOC)){
     	echo '<tr class="data-row">';
     	echo '<td class="id">' .$row['id'] . '</td>';
@@ -34,11 +46,20 @@ if($lostItems){
     	echo '</tr>';
     }
     echo '</table>';
+    echo '</div>';
     
 }
 
 
 ?>
+
+
+
+
+
+
+
+
 
 <div id="main-container">
   <div class="card">

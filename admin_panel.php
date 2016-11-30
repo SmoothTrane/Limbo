@@ -1,10 +1,12 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <?php
     require("connect_db.php");
     require("controllers.php");
     require("quickLinkPage.php");
-    session_start();
     if(!isset($_SESSION['user_id'])){
         echo 'california';
 
@@ -58,6 +60,12 @@ if($stuff){
 
 
 ?>
+
+
+
+
+
+
 
 
 <script>

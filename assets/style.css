@@ -379,7 +379,22 @@ text-align: center;
 	
 }
 
+.item-pane{
+	background-color: white;
+	
+  padding:20px 20px;
+  margin: 20px 20px;
+  border-radius: 3px;
+   border: 1px solid #ddd;
+   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
 
+
+}
+
+
+.item-title{
+	margin-bottom: 20px;
+}
 /*.form-wrapper{*/
 /*	background-color: white;*/
 /*	height: 50;*/

@@ -5,23 +5,31 @@ require('connect_db.php');
 require("quickLinkPage.php");
 $foundItems = getRecordsByField("stuff", "status", "found");
 
-if($foundItems){
-    echo '<h1>Found Items </h1>';
-    echo '<table class="table">';
-    echo '<tr>';
-    echo '<th>ID</th>';
-    echo '<th>Location ID</th>';
-    echo '<th>Description</th>';
-    echo '<th>Create Date </th>';
-    echo '<th>Update Date</th>';
-    echo '<th>Room </th>';
-    echo '<th>Owner</th>';
-    echo '<th>Finder</th>';
-    echo '</tr>';
-    
-    
+
+
+
+?>
+
+ <div class="item-pane">
+   <div class="card-title item-title">
+ <h1>Found Items </h1>
+ </div>
+
  
-    while($row = mysqli_fetch_array($foundItems, MYSQLI_ASSOC)){
+    <table class="table table-pane">
+    <tr>
+    <th >ID</th>
+    <th>Location ID</th>
+    <th>Description</th>
+    <th>Create Date </th>
+    <th>Update Date</th>
+    <th>Room </th>
+    <th>Owner</th>
+    <th>Finder</th>
+    </tr>
+    <?php
+    if($foundItems){
+     while($row = mysqli_fetch_array($foundItems, MYSQLI_ASSOC)){
     	echo '<tr class="data-row">';
     	echo '<td class="id">' .$row['id'] . '</td>';
     	echo '<td class="lid">' .$row['location_id'] . '</td>';
@@ -34,11 +42,13 @@ if($foundItems){
     	echo '</tr>';
     }
     echo '</table>';
+    echo '</div>';
     
-}
-
-
-?>
+    }
+    
+    ?>
+    
+    
 
 <div id="main-container">
   <div class="card">
