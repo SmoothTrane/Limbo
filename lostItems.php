@@ -10,27 +10,31 @@ $lostItems = getRecordsByField("stuff", "status", "lost");
 ?>
 
 <div class="item-pane">
-  
-    <div class="card-title item-title">
-      <h1>Found Items</h1>
-      
-    </div>
-  
-
-
-    <table class="table">
-    <tr>
-    <th>ID</th>
-    <th>Location ID</th>
-    <th>Description</th>
-    <th>Create Date </th>
-    <th>Update Date</th>
-    <th>Room </th>
-    <th>Owner</th>
-    <th>Finder</th>
+     <div class="card-title item-title">
+ <h1>Lost Items </h1>
+ </div>
+<div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="What you looking for?">
+</div>
+<span class="counter pull-right"></span>
+<table class="table">
+  <thead>
+     <tr>
+      <th>ID</th>
+      <th>Location ID</th>
+      <th>Description</th>
+      <th>Create Date </th>
+      <th>Update Date</th>
+      <th>Room </th>
+      <th>Owner</th>
+      <th>Finder</th>
     </tr>
-  
-<?php
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
 if($lostItems){
 
     while($row = mysqli_fetch_array($lostItems, MYSQLI_ASSOC)){
@@ -45,13 +49,17 @@ if($lostItems){
     	echo '<td class="finder">' .$row['finder'] . '</td>';
     	echo '</tr>';
     }
-    echo '</table>';
-    echo '</div>';
     
 }
+    
+    ?>
+  </tbody>
+</table>
+
+</div>
 
 
-?>
+
 
 
 

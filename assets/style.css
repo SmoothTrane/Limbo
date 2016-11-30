@@ -400,4 +400,16 @@ text-align: center;
 /*	height: 50;*/
 /*}*/
 
+table tr[visible='false'],
+.no-result{
+  display:none;
+}
 
+.table tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px; 
+  color:#ccc;
+}

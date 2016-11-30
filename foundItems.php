@@ -10,26 +10,35 @@ $foundItems = getRecordsByField("stuff", "status", "found");
 
 ?>
 
- <div class="item-pane">
-   <div class="card-title item-title">
+<div class="item-pane">
+     <div class="card-title item-title">
  <h1>Found Items </h1>
  </div>
-
- 
-    <table class="table table-pane">
-    <tr>
-    <th >ID</th>
-    <th>Location ID</th>
-    <th>Description</th>
-    <th>Create Date </th>
-    <th>Update Date</th>
-    <th>Room </th>
-    <th>Owner</th>
-    <th>Finder</th>
+<div class="form-group pull-right">
+    <input type="text" class="search form-control" placeholder="What you looking for?">
+</div>
+<span class="counter pull-right"></span>
+<table class="table">
+  <thead>
+     <tr>
+      <th>ID</th>
+      <th>Location ID</th>
+      <th>Description</th>
+      <th>Create Date </th>
+      <th>Update Date</th>
+      <th>Room </th>
+      <th>Owner</th>
+      <th>Finder</th>
     </tr>
-    <?php
-    if($foundItems){
-     while($row = mysqli_fetch_array($foundItems, MYSQLI_ASSOC)){
+    <tr class="warning no-result">
+      <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+if($foundItems){
+
+    while($row = mysqli_fetch_array($foundItems, MYSQLI_ASSOC)){
     	echo '<tr class="data-row">';
     	echo '<td class="id">' .$row['id'] . '</td>';
     	echo '<td class="lid">' .$row['location_id'] . '</td>';
@@ -41,13 +50,15 @@ $foundItems = getRecordsByField("stuff", "status", "found");
     	echo '<td class="finder">' .$row['finder'] . '</td>';
     	echo '</tr>';
     }
-    echo '</table>';
-    echo '</div>';
     
-    }
+}
     
     ?>
-    
+  </tbody>
+</table>
+
+</div>
+
     
 
 <div id="main-container">
