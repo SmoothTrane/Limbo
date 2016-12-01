@@ -17,6 +17,14 @@ function getAllStuff(){
 	$results = mysqli_query($dbc, $query);
 	return $results; 
  }
+ 
+ function getAllAdmins(){
+ 	global $dbc;
+ 	$query = "SELECT * from users WHERE role='admin' OR role ='superadmin'";
+ 	$results = mysqli_query($dbc, $query);
+ 	return $results;
+ 	
+ }
 
 
 function addStuff($room, $owner, $finder, $status, $description, $lid){

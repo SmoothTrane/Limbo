@@ -36,6 +36,7 @@ id int primary key auto_increment,
 
 );
 
+
 INSERT into locations(name)
 	values("McCann Arena"),
 		  ("Donelly Hall"),

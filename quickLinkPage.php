@@ -39,7 +39,10 @@ session_start();
 <li><a href="/lostItems.php">Lost Items</a></li>
 <li><a href="/foundItems.php">Found Items</a></li>
 <li><a href="/addnewitem.php">New Item</a></li>
+<li><a href="/updatefoundstuff.php">Update Item</a></li>
     </ul>
 
   </div>
 </nav>
+</body>
+</html>

@@ -1,12 +1,8 @@
 <?php
     session_start();
-?>
-<!DOCTYPE html>
-<html>
-<?php
     require("connect_db.php");
-    require("controllers.php");
     require("quickLinkPage.php");
+    require("controllers.php");
     if(!isset($_SESSION['user_id'])){
         echo 'california';
 
@@ -83,6 +79,7 @@ if($stuff){
         echo '<td class="lost setStatus"> SET LOST</td>';
         echo '<td class="claimed setStatus"> SET CLAIMED </td>';
     	echo '</tr>';
+    
     }
 
     
