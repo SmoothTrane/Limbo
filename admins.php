@@ -38,7 +38,7 @@ if($admins){
     
     
     while($row = mysqli_fetch_array($admins, MYSQLI_ASSOC)){
-    	echo '<tr>';
+    	echo '<tr class="data-row admin-row">';
     	echo '<td class="id">' .$row['user_id'] . '</td>';
     	echo '<td>' .$row['first_name'] . '</td>';
     	echo '<td>' .$row['last_name'] . '</td>';
@@ -48,14 +48,105 @@ if($admins){
     	echo '</tr>';
     	
     }
-
+echo "</table>";
     
 }
 ?>
 
 
 
+<div id="main-container">
+
+      <div class="content">
+        
+        <form action="" class="add-admin limbo-form" method="POST">
+                  <span class="remove glyphicon glyphicon-remove"></span>
+
+          <h1>Update Admin</h1>
+          
+     
+   <div class="form-group form-content">
+            
+        
+       
+        
+         <div class="form-group form-content">
+            <label for="input-finder">First Name</label>
+            <input id="input-finder" type="text" class="" name="">
+        </div>
+         
+         
+         <div class="form-group form-content">
+            <label for="input-finder">Last Name</label>
+            <input id="input-finder" type="text" class="" name="">
+        </div>
+        <div class="form-group form-content">
+            <label for="input-finder">Email</label>
+            <input id="input-finder" type="text" class="" name="">
+        </div>
+         
+         <div class="form-group">
+        <label for="input-location">Role</label>
+        <br/>
+         <div class=" ">
+          <select id="" class="" name="role"> Select Role
+            <option value="admin">Admin</option>
+            <option value="superadmin">Super Admin</option>
+            <option value="user">User</option>
+          
+          </select>
+          </div>
+         
+       
+      
+      
+        <button type="submit" class="btn add-btn ">Add</button>
+    </form>
+    
+        
+        
+        
+        <h2></h2>
+
+
+        
+    </div>
+           
+  </div>
+  
+
 <script>
+
+
+ $('.admin-row').click(function(){
+  var row = $(this);
+  $('tr').css('background-color', 'white');
+  row.css('background-color', '#D2D7D3');
+  
+    $("#main-container").fadeIn(function(){
+        var form = $(".limbo-form");
+      var card = $(this).children(".card");
+     var desc = row.children(".desc").text();
+     form.find("#input-desc").text(desc);
+     var owner = row.children(".owner").text();
+     form.find("#input-owner").val(owner);
+     var room = row.children(".room").text();
+     form.find("#input-room").val(room);
+     var lid = row.children(".lid").text();
+     form.find("#location").val(lid);
+      var finder = row.children(".finder").text();
+     form.find("#input-finder").val(finder);
+    
+    //  card.find("h2").text(desc);
+    //  card.find("#title-text").text(finder);
+     
+   
+     //TODO UPDATE CARD WITH TABLE INFORMATION
+    });
+  
+});
+
+
     $(".del").click(function(){
     var row = $(this).closest("tr");
     var rowId = row.children(".id")[0].innerHTML;

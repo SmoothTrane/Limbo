@@ -1,7 +1,6 @@
 <?php
 
 
-
 function getRecordsByField($entity, $field, $value){
 	global $dbc;
 	$query = "SELECT * FROM $entity WHERE $field='$value'ORDER BY id ASC";
@@ -89,6 +88,8 @@ function addUser($fname, $lname, $email, $role, $pass){
 
 		echo 'Error adding user!';
    }
+   
+}
  
  function deleteUser($id){
  	global $dbc;
@@ -109,6 +110,9 @@ function load($page = "admin_login.php"){
 	header("Location:$url");
 	exit();
 }
+
+
+
 
 
 function authenticate($email = '', $pass = ''){
@@ -154,5 +158,6 @@ else{
 return array(false, $errors);
 
 }
-}
+
+
 ?>

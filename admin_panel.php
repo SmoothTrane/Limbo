@@ -64,7 +64,7 @@ if($stuff){
     
     
     while($row = mysqli_fetch_array($stuff, MYSQLI_ASSOC)){
-    	echo '<tr>';
+    	echo '<tr class="admin-row">';
     	echo '<td class="id">' .$row['id'] . '</td>';
     	echo '<td>' .$row['location_id'] . '</td>';
     	echo '<td>' .$row['create_date'] . '</td>';
@@ -79,17 +79,27 @@ if($stuff){
         echo '<td class="lost setStatus"> SET LOST</td>';
         echo '<td class="claimed setStatus"> SET CLAIMED </td>';
     	echo '</tr>';
-    
+    	echo '</tbody>';
+    	
     }
 
-    
+    echo '</table>';
+    	echo '</div>';
 }
 ?>
 
 
 
 
+
+  
+
 <script>
+
+
+ 
+
+
 $(".del").click(function(){
     var row = $(this).closest("tr");
     var rowId = row.children(".id")[0].innerHTML;
