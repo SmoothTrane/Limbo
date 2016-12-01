@@ -36,6 +36,10 @@ id int primary key auto_increment,
 
 );
 
+-- UPDATE users
+-- SET pass=SHA($password)
+-- WHERE user_id = $id; 
+
 
 INSERT into locations(name)
 	values("McCann Arena"),

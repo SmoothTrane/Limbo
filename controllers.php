@@ -89,7 +89,16 @@ function addUser($fname, $lname, $email, $role, $pass){
 
 		echo 'Error adding user!';
    }
-
+ 
+ function deleteUser($id){
+ 	global $dbc;
+ 	$query = "DELETE FROM User where id = $id";
+ 	$results = mysqli_query($dbc, $query);
+ 		if(!$results){
+		echo "Erorr deleting item";
+	
+ }
+ 
 }
 
 
@@ -145,5 +154,5 @@ else{
 return array(false, $errors);
 
 }
-
+}
 ?>

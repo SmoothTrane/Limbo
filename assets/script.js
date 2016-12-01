@@ -35,34 +35,17 @@ $(function(){
 $(function(){
   
   
-$('.data-row').click(function(){
-  var row = $(this);
-  $('tr').css('background-color', 'white');
-  row.css('background-color', '#D2D7D3');
-  
-    $("#main-container").fadeIn(function(){
-      var card = $(this).children(".card");
-     var desc = row.children(".desc").text();
-     var finder = row.children(".finder").text();
-     var date = row.children(".create").text();
-     card.find("h2").text(desc);
-     card.find("#title-text").text(finder);
-     
-   
-     //TODO UPDATE CARD WITH TABLE INFORMATION
-    });
-  
-});
+
 
   $(".remove").click(function(){
     $("#main-container").fadeOut();
     
   });
   
-    $("#main-container").click(function(){
-    $("#main-container").fadeOut();
+  //   $("#main-container").click(function(){
+  //   $("#main-container").fadeOut();
     
-  });
+  // });
   
   
   
