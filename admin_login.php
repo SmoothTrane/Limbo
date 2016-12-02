@@ -4,6 +4,8 @@ global $dbc;
 
 require("connect_db.php");
 require("controllers.php");
+require("quickLinkPage.php");
+
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -28,8 +30,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 }
 ?>
-<!DOCTYPE html>
-<html>
+
 
 <h1> Admin Login
 </h1>
@@ -47,9 +48,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 </form>
 
 </html>
-
-<script>
-
-
-
-</script>

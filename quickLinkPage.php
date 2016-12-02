@@ -1,5 +1,7 @@
 <?php
 session_start();
+ob_start();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,10 +38,26 @@ session_start();
     <ul class="nav navbar-nav">
       
 <li><a href="/"><span id="home">Limbo</a> </span></li>
+ <?php
+    if(isset($_SESSION['user_id'])){
+     
+
+        echo '<li><a href="/admin_panel.php">Admin Item Panel </a></li>';
+        echo '<li><a href="/admins.php">Admins Panel</a></li>';
+
+    }
+    else{
+      echo '<li><a href="/admin_login.php">Admin Login </a></li>';
+    }
+    ?>
 <li><a href="/lostItems.php">Lost Items</a></li>
 <li><a href="/foundItems.php">Found Items</a></li>
 <li><a href="/addnewitem.php">New Item</a></li>
-<li><a href="/updatefoundstuff.php">Update Item</a></li>
+
+  
+    
+   
+    
     </ul>
 
   </div>

@@ -191,30 +191,30 @@ $(function(){
 
 
 
-//     $(".del").click(function(){
-//     var row = $(this).closest("tr");
-//     var rowId = row.children(".id")[0].innerHTML;
+    $(".del").click(function(){
+    var row = $(this).closest("tr");
+    var rowId = row.children(".id")[0].innerHTML;
 
-//   $.ajax({
-//         url: "deleteAdmin.php",
-//         type: "post",
-//         data: {id: rowId
-//         },
-//         dataType: "text",
-//         success: function () {
-//           row.remove();         
+  $.ajax({
+        url: "deleteAdmin.php",
+        type: "post",
+        data: {id: rowId
+        },
+        dataType: "text",
+        success: function () {
+           row.remove();         
 
-//         },
-//         error: function(jqXHR, textStatus, errorThrown) {
-//           alert("Error Try again!");
-//         }
-
-
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+           alert("Error Try again!");
+        }
 
 
-// });
 
-// });
+
+});
+
+});
     
 });
 </script>
