@@ -114,10 +114,14 @@ function addUser($fname, $lname, $email, $role, $pass){
 
 
  function change_password($id, $pass) {
-    $id = (int)$id;
-    $pass = md5($pass);
-    //update password in database
-    mysql_query("UPDATE`users` SET`password` = '$password' WHERE`membersID` = $membersID");   
+   global $dbc;
+   
+   $query ="UPDATE users set pass = SHA('$pass') WHERE user_id = $id";
+    $results = mysqli_query($dbc, $query);
+ 		if(!$results){
+		echo "Erorr changing password";
+	
+ }
 }
 
 

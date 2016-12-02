@@ -3,7 +3,7 @@
     require("connect_db.php");
     require("quickLinkPage.php");
     require("controllers.php");
-    if(!isset($_SESSION['user_id'])){
+    if(!isset($_SESSION['user_id']) && $_SESSION['role'] == 'user' ){
         load();
     }
    

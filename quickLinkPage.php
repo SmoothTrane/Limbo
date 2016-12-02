@@ -44,6 +44,8 @@ ob_start();
 
         echo '<li><a href="/admin_panel.php">Admin Item Panel </a></li>';
         echo '<li><a href="/admins.php">Admins Panel</a></li>';
+        echo '<li><a href="/add_admin.php">Add New Admin</a></li>';
+        echo '<li><a href="/changeadminpassword.php">Change Admin Password</a></li>';
 
     }
     else{
