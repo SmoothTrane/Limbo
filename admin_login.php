@@ -34,16 +34,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <h1> Admin Login
 </h1>
+  
 
+<form action="admin_login.php" class="limbo-form" method="POST">
 
-<form action="admin_login.php" method="POST">
-<table>
-<tr>
-<td>Email:</td><td><input type="text" name="email"></td>
-<td>Pass:</td><td><input type="password" name="pass"></td>
+  <div class="form-group form-content">
+            <label for="input-email">Email</label>
+            <input type="text" name="email" class="form-input" required>  </input>
+        </div>
+        
+         <div class="form-group form-content">
+            <label for="input-pass">Password</label>
+            <input type="password" name="pass" class="form-input" required>  </input>
+        </div>
 
-</tr>
-</table>
 <p><input type="submit" value="Submit"></p>
 </form>
 

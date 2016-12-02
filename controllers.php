@@ -95,7 +95,7 @@ function addUser($fname, $lname, $email, $role, $pass){
  
  function deleteUser($id){
  	global $dbc;
- 	$query = "DELETE FROM User where id = $id";
+ 	$query = "DELETE FROM users where user_id = $id";
  	$results = mysqli_query($dbc, $query);
  		if(!$results){
 		echo "Erorr deleting item";
