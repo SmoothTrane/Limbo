@@ -59,42 +59,12 @@ if($foundItems){
 
 </div>
 
-    <script>
-        
-        $('.found-row').click(function(){
-  var row = $(this);
-  $('tr').css('background-color', 'white');
-  row.css('background-color', '#D2D7D3');
-  
-    $("#main-container").fadeIn(function(){
-        var form = $(".limbo-form");
-      var card = $(this).children(".card");
-     var desc = row.children(".desc").text();
-     form.find("#input-desc").text(desc);
-     var owner = row.children(".owner").text();
-     form.find("#input-owner").val(owner);
-     var room = row.children(".room").text();
-     form.find("#input-room").val(room);
-     var lid = row.children(".lid").text();
-     form.find("#location").val(lid);
-      var finder = row.children(".finder").text();
-     form.find("#input-finder").val(finder);
-    
-    //  card.find("h2").text(desc);
-    //  card.find("#title-text").text(finder);
-     
-   
-     //TODO UPDATE CARD WITH TABLE INFORMATION
-    });
-  
-});
-    </script>
 
 <div id="main-container">
 
       <div class="content">
         
-        <form action="updatefounditem.php" class="add-admin limbo-form" method="POST">
+        <form action="updateitem.php" class="found-form limbo-form" method="POST">
                   <span class="remove glyphicon glyphicon-remove"></span>
 
           <h1>Update Item</h1>
@@ -156,11 +126,14 @@ if($foundItems){
             <label for="input-finder">Finder</label>
             <input id="input-finder" type="text" class="" name="finder">
         </div>
+        
+                    <input id="input-id" type="hidden" class="" name="id">
+
          
        
       
       
-        <button type="submit" class="btn add-btn ">Add</button>
+        <button type="submit" class="btn found-btn add-btn ">Add</button>
     </form>
     
         
@@ -175,4 +148,70 @@ if($foundItems){
   </div>
   
 </body>
+
+    <script>
+        
+        $('.found-row').click(function(){
+      var row = $(this);
+      $('tr').css('background-color', 'white');
+      row.css('background-color', '#D2D7D3');
+      
+        $("#main-container").fadeIn(function(){
+            var form = $(".limbo-form");
+            var id = row.children(".id").text();
+            form.find("#input-id").val(id);
+
+         var desc = row.children(".desc").text();
+         form.find("#input-desc").text(desc);
+         var owner = row.children(".owner").text();
+         form.find("#input-owner").val(owner); 
+         var room = row.children(".room").text();
+         form.find("#input-room").val(room);
+         var lid = row.children(".lid").text();
+         form.find("#location").val(lid);
+          var finder = row.children(".finder").text();
+         form.find("#input-finder").val(finder);
+        
+        //  card.find("h2").text(desc);
+        //  card.find("#title-text").text(finder);
+         
+       
+         //TODO UPDATE CARD WITH TABLE INFORMATION
+        });
+  
+});
+
+$(function(){
+    
+    $(".found-form").submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formData = form.serialize();
+    var status = $(".select").text().trim().toLowerCase();
+    formData+="&status="+status;
+    console.log(formData);
+    $.ajax({
+        
+        
+        url:"updateitem.php",
+      type:"post",
+      data: formData,
+      dataType: "text",
+      success: function (){
+       alert("true");
+      }
+        
+        
+    });
+    
+    
+    
+  });
+    
+    
+});
+
+
+  
+    </script>
 </html>

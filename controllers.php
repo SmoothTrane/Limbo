@@ -56,7 +56,7 @@ function validateName($name){
     if(empty($name)){
         return -1;
     }
-    $query = 'SELECT id, name FROM users WHERE name =$name';
+    $query = "SELECT id, name FROM users WHERE name = '$name'";
     $results = mysqli_query($dbc, $query);
     
     if(mysqli_num_rows ($results) ==0){
@@ -90,6 +90,8 @@ function addUser($fname, $lname, $email, $role, $pass){
    }
    
 }
+
+
  
  function deleteUser($id){
  	global $dbc;
@@ -103,6 +105,22 @@ function addUser($fname, $lname, $email, $role, $pass){
 }
 
 
+
+
+
+
+
+
+
+
+ function change_password($id, $pass) {
+    $id = (int)$id;
+    $pass = md5($pass);
+    //update password in database
+    mysql_query("UPDATE`users` SET`password` = '$password' WHERE`membersID` = $membersID");   
+}
+
+
 function load($page = "admin_login.php"){
 	$url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
 	$url = rtrim($url, '/\\');
@@ -111,6 +129,25 @@ function load($page = "admin_login.php"){
 	exit();
 }
 
+
+
+function updateItem($id, $description, $room, $owner, $finder, $status, $locationId){
+	global $dbc;
+	$query = "UPDATE stuff set  description = '$description', room = '$room', owner = '$owner', status = '$status', finder = '$finder', location_id = '$locationId', update_date = NOW() WHERE id= $id";
+	$results = mysqli_query($dbc, $query);
+	
+	if(!$results){
+		echo 'Error updating item';
+	}
+}
+
+
+function updateUser($id, $first_name, $last_name, $email, $role){
+	global $dbc; 
+	$query = "UPDATE users set first_name = '$first_name', last_name = '$last_name', email = '$email', role = '$role' where user_id = $id";
+	$results = mysqli_query($dbc, $query);	        
+	
+}
 
 
 

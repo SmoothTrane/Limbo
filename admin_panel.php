@@ -4,7 +4,7 @@
     require("quickLinkPage.php");
     require("controllers.php");
     if(!isset($_SESSION['user_id'])){
-        echo 'california';
+     
 
         load();
     }

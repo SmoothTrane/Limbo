@@ -62,7 +62,7 @@
             <option value="3">Champagnat Hall</option>
             <option value="4">Upper New</option>
             <option value="5">Lower New</option>
-            <option value="6">Upper Wes Cedar</option>
+            <option value="6">Upper West Cedar</option>
             <option value="7">Lower West Cedar</option>
             <option value="8">Hancock Center</option>
             <option value="9">Murray Student Center</option>

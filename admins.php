@@ -3,7 +3,12 @@ session_start();
 require("connect_db.php");
 require("controllers.php");
 require("quickLinkPage.php");
+ if(!isset($_SESSION['user_id'])){
+     
 
+        load();
+    }
+   
 $admins = getAllAdmins();
 
 ?>
@@ -40,10 +45,10 @@ if($admins){
     while($row = mysqli_fetch_array($admins, MYSQLI_ASSOC)){
     	echo '<tr class="data-row admin-row">';
     	echo '<td class="id">' .$row['user_id'] . '</td>';
-    	echo '<td>' .$row['first_name'] . '</td>';
-    	echo '<td>' .$row['last_name'] . '</td>';
-    	echo '<td>' .$row['email'] . '</td>';
-    	echo '<td>' .$row['role'] . '</td>';
+    	echo '<td class="fname">' .$row['first_name'] . '</td>';
+    	echo '<td class="lname">' .$row['last_name'] . '</td>';
+    	echo '<td class= "email">' .$row['email'] . '</td>';
+    	echo '<td class="role">' .$row['role'] . '</td>';
         echo '<td> <span class="glyphicon glyphicon-remove del"> </td>';
     	echo '</tr>';
     	
@@ -59,7 +64,7 @@ echo "</table>";
 
       <div class="content">
         
-        <form action="" class="add-admin limbo-form" method="POST">
+        <form action="" class="add-admin admin-form limbo-form" method="POST">
                   <span class="remove glyphicon glyphicon-remove"></span>
 
           <h1>Update Admin</h1>
@@ -71,25 +76,25 @@ echo "</table>";
        
         
          <div class="form-group form-content">
-            <label for="input-finder">First Name</label>
-            <input id="input-finder" type="text" class="" name="">
+            <label for="input-first_name">First Name</label>
+            <input id="input-first_name" type="text" class="" name="first_name">
         </div>
          
          
          <div class="form-group form-content">
-            <label for="input-finder">Last Name</label>
-            <input id="input-finder" type="text" class="" name="">
+            <label for="input-last_name">Last Name</label>
+            <input id="input-last_name" type="text" class="" name="last_name">
         </div>
         <div class="form-group form-content">
-            <label for="input-finder">Email</label>
-            <input id="input-finder" type="text" class="" name="">
+            <label for="input-email">Email</label>
+            <input id="input-email" type="text" class="" name="email">
         </div>
          
          <div class="form-group">
-        <label for="input-location">Role</label>
+        <label for="input-role">Role</label>
         <br/>
          <div class=" ">
-          <select id="" class="" name="role"> Select Role
+          <select id="" class="input-role" name="role"> Select Role
             <option value="admin">Admin</option>
             <option value="superadmin">Super Admin</option>
             <option value="user">User</option>
@@ -97,7 +102,8 @@ echo "</table>";
           </select>
           </div>
          
-       
+        <input id="input-id" type="hidden" class="" name="id">
+
       
       
         <button type="submit" class="btn add-btn ">Add</button>
@@ -116,27 +122,29 @@ echo "</table>";
   
 
 <script>
+$(function(){
+    
+    
 
 
  $('.admin-row').click(function(){
-  var row = $(this);
-  $('tr').css('background-color', 'white');
-  row.css('background-color', '#D2D7D3');
-  
-    $("#main-container").fadeIn(function(){
-        var form = $(".limbo-form");
-      var card = $(this).children(".card");
-     var desc = row.children(".desc").text();
-     form.find("#input-desc").text(desc);
-     var owner = row.children(".owner").text();
-     form.find("#input-owner").val(owner);
-     var room = row.children(".room").text();
-     form.find("#input-room").val(room);
-     var lid = row.children(".lid").text();
-     form.find("#location").val(lid);
-      var finder = row.children(".finder").text();
-     form.find("#input-finder").val(finder);
-    
+    var row = $(this);
+      $('tr').css('background-color', 'white');
+      row.css('background-color', '#D2D7D3');
+      
+        $("#main-container").fadeIn(function(){
+            var form = $(".limbo-form");
+            var id = row.children(".id").text();
+            form.find("#input-id").val(id);
+
+         var firstName = row.children(".fname").text();
+         form.find("#input-first_name").val(firstName);
+         var lastName = row.children(".lname").text();
+         form.find("#input-last_name").val(lastName);
+         var role = row.children(".role").text();
+         form.find(".input-role").val(role);
+         var email = row.children(".email").text();
+         form.find('#input-email').val(email);
     //  card.find("h2").text(desc);
     //  card.find("#title-text").text(finder);
      
@@ -147,32 +155,68 @@ echo "</table>";
 });
 
 
-    $(".del").click(function(){
-    var row = $(this).closest("tr");
-    var rowId = row.children(".id")[0].innerHTML;
-
-  $.ajax({
-        url: "deleteAdmin.php",
-        type: "post",
-        data: {id: rowId
-        },
-        dataType: "text",
-        success: function () {
-           row.remove();         
-
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-           alert("Error Try again!");
-        }
 
 
+ $(".admin-form").submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formData = form.serialize();
 
-
-});
-
-});
+    console.log(formData);
+    $.ajax({
+        
+        
+        url:"updateuser.php",
+      type:"post",
+      data: formData,
+      dataType: "text",
+      success: function (){
+       alert("true");
+      }
+        
+        
+    });
     
     
+    
+  });
+
+
+
+
+
+
+
+
+
+
+
+//     $(".del").click(function(){
+//     var row = $(this).closest("tr");
+//     var rowId = row.children(".id")[0].innerHTML;
+
+//   $.ajax({
+//         url: "deleteAdmin.php",
+//         type: "post",
+//         data: {id: rowId
+//         },
+//         dataType: "text",
+//         success: function () {
+//           row.remove();         
+
+//         },
+//         error: function(jqXHR, textStatus, errorThrown) {
+//           alert("Error Try again!");
+//         }
+
+
+
+
+// });
+
+// });
+    
+});
 </script>
 
 

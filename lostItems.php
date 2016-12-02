@@ -7,11 +7,12 @@ $lostItems = getRecordsByField("stuff", "status", "lost");
 
 
 
+
 ?>
 
 <div class="item-pane">
      <div class="card-title item-title">
- <h1>Lost Items </h1>
+ <h1>Found Items </h1>
  </div>
 <div class="form-group pull-right">
     <input type="text" class="search form-control" placeholder="What you looking for?">
@@ -59,58 +60,17 @@ if($lostItems){
 </div>
 
 
-
-<script>
-/* global $ */
-  
-  $('.lost-row').click(function(){
-  var row = $(this);
-  $('tr').css('background-color', 'white');
-  row.css('background-color', '#D2D7D3');
-  
-    $("#main-container").fadeIn(function(){
-        var form = $(".limbo-form");
-      var card = $(this).children(".card");
-     var desc = row.children(".desc").text();
-     form.find("#input-desc").text(desc);
-     var owner = row.children(".owner").text();
-     form.find("#input-owner").val(owner);
-     var room = row.children(".room").text();
-     form.find("#input-room").val(room);
-     var lid = row.children(".lid").text();
-     form.find("#location").val(lid);
-     var finder = row.children(".finder").text();
-     form.find("#input-finder").val(finder);
-
-    //  card.find("h2").text(desc);
-    //  card.find("#title-text").text(finder);
-     
-   
-     //TODO UPDATE CARD WITH TABLE INFORMATION
-    });
-  
-});
-  
-</script>
-
-
-
-
-
-
-
-
 <div id="main-container">
 
       <div class="content">
         
-        <form action="updatefounditem.php" class="add-admin limbo-form" method="POST">
+        <form action="updateitem.php" class="form-lost limbo-form" method="POST">
                   <span class="remove glyphicon glyphicon-remove"></span>
 
           <h1>Update Item</h1>
           <div class="radio-wrapper">
-              <button type="button" class="btn switch-btn">Found</button>
-              <button type="button" class="btn  select switch-btn">Lost</button>
+              <button type="button" class="btn  select switch-btn">Found</button>
+              <button type="button" class="btn  switch-btn">Lost</button>
             </div>
             
      
@@ -157,7 +117,7 @@ if($lostItems){
           </select>
           </div>
     </div>
-         <div class="form-group form-content">
+          <div class="form-group form-content">
             <label for="input-owner">Owner</label>
             <input id="input-owner" type="text" class="" name="owner" >
         </div>
@@ -166,11 +126,14 @@ if($lostItems){
             <label for="input-finder">Finder</label>
             <input id="input-finder" type="text" class="" name="finder">
         </div>
+        
+                    <input id="input-id" type="hidden" class="" name="id">
+
          
        
       
       
-        <button type="submit" class="btn add-btn ">Add</button>
+        <button type="submit" class="btn found-btn add-btn ">Add</button>
     </form>
     
         
@@ -185,4 +148,70 @@ if($lostItems){
   </div>
   
 </body>
+
+    <script>
+        
+        $('.lost-row').click(function(){
+      var row = $(this);
+      $('tr').css('background-color', 'white');
+      row.css('background-color', '#D2D7D3');
+      
+        $("#main-container").fadeIn(function(){
+            var form = $(".limbo-form");
+            var id = row.children(".id").text();
+            form.find("#input-id").val(id);
+
+         var desc = row.children(".desc").text();
+         form.find("#input-desc").text(desc);
+         var owner = row.children(".owner").text();
+         form.find("#input-owner").val(owner);
+         var room = row.children(".room").text();
+         form.find("#input-room").val(room);
+         var lid = row.children(".lid").text();
+         form.find("#location").val(lid);
+          var finder = row.children(".finder").text();
+         form.find("#input-finder").val(finder);
+        
+        //  card.find("h2").text(desc);
+        //  card.find("#title-text").text(finder);
+         
+       
+         //TODO UPDATE CARD WITH TABLE INFORMATION
+        });
+  
+});
+
+$(function(){
+    
+    $(".form-lost").submit(function(e){
+    e.preventDefault();
+    var form = $(this);
+    var formData = form.serialize();
+    var status = $(".select").text().trim().toLowerCase();
+    formData+="&status="+status;
+    console.log(formData);
+    $.ajax({
+        
+        
+        url:"updateitem.php",
+      type:"post",
+      data: formData,
+      dataType: "text",
+      success: function (){
+       alert("true");
+      }
+        
+        
+    });
+    
+    
+    
+  });
+    
+    
+});
+
+
+  
+    </script>
 </html>
