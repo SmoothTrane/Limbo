@@ -171,7 +171,7 @@ $(function(){
       data: formData,
       dataType: "text",
       success: function (){
-       alert("true");
+       $(".admin-form")[0].reset();
       }
         
         

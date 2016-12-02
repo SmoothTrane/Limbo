@@ -71,6 +71,17 @@ $(function(){
     
   });
   
+  
+  $(".update-switch").click(function(){
+    var clickedBtn = $(this);
+    var currentBtn = $(".select");
+    currentBtn.removeClass("select");
+    clickedBtn.addClass("select");
+    
+    
+    
+  })
+  
   $(".add-form").submit(function(e){
     e.preventDefault();
     var form = $(this);
@@ -125,6 +136,14 @@ $(function(){
   });
   
   
+  $(function(){
+    
+    $("#search").click(function(){
+      
+      
+    });
+    
+  });
   
   
   

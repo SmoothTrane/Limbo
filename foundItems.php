@@ -69,8 +69,8 @@ if($foundItems){
 
           <h1>Update Item</h1>
           <div class="radio-wrapper">
-              <button type="button" class="btn  select switch-btn">Found</button>
-              <button type="button" class="btn  switch-btn">Lost</button>
+              <button type="button" class="btn  select update-switch">Found</button>
+              <button type="button" class="btn  update-switch">Lost</button>
             </div>
             
      
@@ -198,7 +198,7 @@ $(function(){
       data: formData,
       dataType: "text",
       success: function (){
-       alert("true");
+          $(".found-form")[0].reset();
       }
         
         

@@ -112,6 +112,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
       data: formData,
       dataType: "text",
       success: function (){
+          $(".change-password")[0].reset();
       }
         
         

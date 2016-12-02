@@ -1,6 +1,8 @@
   <?php 
-include 'core/init.php';  //connection to database and checks user sessions
-protect_page(); //useres not loged in cannot access this page
+session_start();
+require('controllers.php');
+require('connect_db.php');
+require("admin_login.php");
 
 if (empty($_POST) === false) {
     $required_fields = array('current_password', 'password', 'password_again');
