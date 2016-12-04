@@ -18,7 +18,7 @@ INSERT INTO users( first_name, last_name, email, role, pass)
 	VALUES ("admin", "admin", "admin", "superadmin", SHA("gaze11e")),
 			("gary","coltrane","coltranegary@gmail.com","superadmin",SHA("admin")),
 			("natnael","mengistu","nat","superadmin",SHA("admin")),
-			("brian","parker","parker","superadmin",SHA("admin")),
+			("brian","parker","parker","superadmin",SHA("admin"));
 
 create table if not exists stuff(
 	id int auto_increment primary key,

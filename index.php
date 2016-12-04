@@ -40,15 +40,72 @@ require("quickLinkPage.php");
      
         
         
+        <div id="main-container">
+
+      <div class="content">
         
+    
+    <div class="limbo-form">
+        
+         <span class="remove glyphicon glyphicon-remove"></span>
 
-<!--<p>Please click on a link below.</p>-->
+          <h1>Matching Items</h1>
+          <table class="table">
+  <thead>
+     <tr>
+      <th style="text-align:center">Description</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+          
+    </div>
+        
+        
+    
 
-<!--<p><a href="http://localhost:8888/quickLinkPage.php">Quick Links</a></p>-->
-<!--<p><a href="http://localhost:8888/admin_login.php">Administrator Login</a> is a link to login for Administrators only.</p>-->
-<!--<p><a href="http://localhost:8888/lostItems.php">Lost Items</a> is a link to see current lost items.</p>-->
-<!--<p><a href="http://localhost:8888/foundItems.php">Found Items</a> is a link to see recently found items.</p>-->
-<!--<p><a href="http://localhost:8888/addNewLostItem.php">Add Lost Item</a> is a link to add a lost item.</p>-->
-<!--<p><a href="http://localhost:8888/addFoundItem.php">Add Found Item</a> is a link to add a found item.</p>-->
+
+        
+    </div>
+           
+  </div>
+
+<script>
+    
+    
+        $("#search").click(function(){
+            var val = $(this).val();
+            // User clicks on search, pane pops up and shows various items that match the query
+           // Open up pane
+           // AJAX get request of search query of the content
+           // post the content inside the pane
+           // user clicks on link, and goes to specific list found or lost and shows the item on the list
+           
+           
+           $("#main-container").fadeIn();
+           
+       $.ajax({
+           url:"query.php",
+           method:"post",
+           data:{item:val},
+           dataType:"text",
+           success:function(data){
+               $(".limbo-form").append(data);
+           }
+           
+           
+       });
+           
+           
+           
+           
+           
+             
+            
+            
+        });
+    
+    
+</script>
 </body>
 </html>

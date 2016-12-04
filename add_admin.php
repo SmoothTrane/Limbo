@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
     {
 
         
-        // # addStuff("joe", "mark", "joemark@marist.edu","admin");
         $fname = trim($_POST["first_name"]);
         $lname = trim($_POST["last_name"]);
         $email = trim($_POST["email"]);

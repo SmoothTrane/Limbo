@@ -24,6 +24,21 @@ function getAllStuff(){
  	return $results;
  	
  }
+ 
+ function searchItems($data){
+ 	global $dbc;
+ 	$query = "SELECT * FROM stuff WHERE description LIKE '%$data%'";
+ 	$results = mysqli_query($dbc,$query);
+ 	  while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
+    	// echo '<tr class="data-row found-row">';
+    	// echo '<td class = "desc">' .$row['description'] . '</td>';
+    	// echo '</tr>';
+    	echo $data;
+    }
+ 	
+ 	return $results;
+ 	
+ }
 
 
 function addStuff($room, $owner, $finder, $status, $description, $lid){

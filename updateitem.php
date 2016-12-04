@@ -1,4 +1,5 @@
 <?php
+//the code below calls on the updateitem function
     require("connect_db.php");
     require("controllers.php");
     if ($_SERVER['REQUEST_METHOD']=='POST'){
@@ -17,5 +18,5 @@
             //addStuff($room, $owner, $finder, $status, $description, $locationId);
     }
     
-    
+  x  
 ?>

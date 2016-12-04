@@ -1,4 +1,5 @@
 <?php
+//the code below calls on the deleteitem function
 	require("connect_db.php");
 	require("controllers.php");
 
