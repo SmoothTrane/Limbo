@@ -57,7 +57,11 @@ require("quickLinkPage.php");
       
     </tr>
   </thead>
-  <tbody>
+  <tbody class = "table-body">
+      
+      </tbody>
+      
+      </table>
           
     </div>
         
@@ -74,7 +78,8 @@ require("quickLinkPage.php");
     
     
         $("#search").click(function(){
-            var val = $(this).val();
+            var val = $("#searchterm").val();
+     
             // User clicks on search, pane pops up and shows various items that match the query
            // Open up pane
            // AJAX get request of search query of the content
@@ -90,7 +95,7 @@ require("quickLinkPage.php");
            data:{item:val},
            dataType:"text",
            success:function(data){
-               $(".limbo-form").append(data);
+               $(".table-body").append(data);
            }
            
            

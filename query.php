@@ -5,7 +5,7 @@ require("controllers.php");
 
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    	$item = $_POST["item"];
+    	$item = trim($_POST["item"]);
     	searchItems($item); 
 	}
 
