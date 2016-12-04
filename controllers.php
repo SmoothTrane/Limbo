@@ -31,7 +31,7 @@ function getAllStuff(){
  	$results = mysqli_query($dbc,$query);
  	  while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     	 echo '<tr class="data-row found-row">';
-    	 echo '<td class = "desc">' .$row['description'] . '</td>';
+    	 echo '<td class = "desc"> <strong> Status: ' .$row["status"] . '</strong> ' .$row['description'] . '</td>';
     	 echo '</tr>';
     
     }

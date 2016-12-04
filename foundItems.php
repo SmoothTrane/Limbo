@@ -133,7 +133,7 @@ if($foundItems){
        
       
       
-        <button type="submit" class="btn found-btn add-btn ">Add</button>
+        <button type="submit" class="btn found-btn add-btn ">Update</button>
     </form>
     
         
