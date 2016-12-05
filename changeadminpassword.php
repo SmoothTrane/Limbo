@@ -3,6 +3,11 @@ session_start();
 require("connect_db.php");
 require("quickLinkPage.php");
 require("controllers.php");
+ if(!isset($_SESSION['user_id'])){
+     
+
+        load();
+    }
 
 $admins = getAllAdmins();
 

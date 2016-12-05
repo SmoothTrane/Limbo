@@ -161,6 +161,20 @@ function updateItem($id, $description, $room, $owner, $finder, $status, $locatio
 }
 
 
+
+function claimItem($id,$owner){
+	
+	global $dbc;
+	$query = "UPDATE stuff set  owner = '$owner', status = 'claimed', update_date = NOW() WHERE id= $id";
+	$results = mysqli_query($dbc, $query);
+	
+	if(!$results){
+		echo 'Error updating item';
+	}
+	
+}
+
+
 function updateUser($id, $first_name, $last_name, $email, $role){
 	global $dbc; 
 	$query = "UPDATE users set first_name = '$first_name', last_name = '$last_name', email = '$email', role = '$role' where user_id = $id";

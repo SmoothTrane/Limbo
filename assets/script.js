@@ -88,8 +88,8 @@ $(function(){
     var formData = $(this).serialize();
     var status = $(".select").text().trim().toLowerCase();
     formData+="&status="+status;
-    console.log(formData)
-    
+
+
     $.ajax({
       
       url:"addnewitem.php",
@@ -97,11 +97,14 @@ $(function(){
       data: formData,
       dataType: "text",
       success: function (){
-        $(".add-form")[0].reset();
+         $(".add-form").each(function(){
+           $(this)[0].reset();
+           
+         });
         showNotification(".card-content","success","You have successfuly added an item",true, 7000);
       }
       
-      
+       
       
       
     });
@@ -134,18 +137,6 @@ $(function(){
     });
     
   });
-  
-  
-  $(function(){
-    
-    $("#search").click(function(){
-      
-      
-    });
-    
-  });
-  
-  
   
   $(function(){
     $(".search").keyup(function () {

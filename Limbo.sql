@@ -72,11 +72,11 @@ INSERT into locations(name)
 		  ("Cornell Boathouses");
 	  
 INSERT INTO stuff(location_id, description, room, owner, finder, create_date, update_date, status)
-	VALUES(1,"iPhone 8", "Lobby", "", "Luke Smitts", "16:10:10 12:16:40", "00:00:00", "found"),
-		  (2,"Cubs hat", "310",  "Duke Charles", "", "16:10:10 12:16:30", "00:00:00", "lost"),
-		  (3,"Marist Id", "105",  "Muhammad Kanaaf", "", "16:9:8 09:12:26", "00:00:00", "lost"),
-		  (4,"Boxing Gloves", "777",  "Tyson Jones", "", "16:10:05 02:16:50", "00:00:00", "lost"),
-		  (5,"Mac Laptop", "Lobby",  "Duke Charles", "Luke Smitts", "16:10:11 13:19:02", "00:00:00", "found"),
-		 (6,"Boxing Gloves", "777",  "Tyson Jones", "Gary Coltrane ", "16:10:02 12:16:20", "00:00:00", "found");
+	VALUES(1,"iPhone 8", "Lobby", "", "Jack Rawlins", "16:10:10 12:16:40", "00:00:00", "found"),
+		  (2,"Cubs hat", "310",  "", "", "16:10:10 12:16:30", "00:00:00", "lost"),
+		  (3,"Marist Id", "105",  "", "", "16:9:8 09:12:26", "00:00:00", "lost"),
+		  (4,"Boxing Gloves", "777",  "", "", "16:10:05 02:16:50", "00:00:00", "lost"),
+		  (5,"True Religion Jacket", "Lobby",  "", "Luke Smitts", "16:10:11 13:19:02", "00:00:00", "found"),
+		 (6,"New York Yankees Cap", "777",  "", "Gary Coltrane ", "16:10:02 12:16:20", "00:00:00", "found");
 
 
