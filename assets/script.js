@@ -118,8 +118,7 @@ $(function(){
     e.preventDefault();
     var form = $(this);
     var formData = $(this).serialize();
-    alert(formData);
-    
+
     $.ajax({
       
       url:"add_admin.php",

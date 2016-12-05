@@ -29,14 +29,18 @@ function getAllStuff(){
  	global $dbc;
  	$query = "SELECT * FROM stuff WHERE description LIKE '%$data%'";
  	$results = mysqli_query($dbc,$query);
- 	  while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
+ 	 
+    if($results){
+    	 while($row = mysqli_fetch_array($results, MYSQLI_ASSOC)){
     	 echo '<tr class="data-row found-row">';
     	 echo '<td class = "desc"> <strong> Status: ' .$row["status"] . '</strong> ' .$row['description'] . '</td>';
     	 echo '</tr>';
     
     }
- 	
- 	return $results;
+	}
+ 	else{
+ 		echo 'Error searching for item!';
+ 	}
  	
  }
 

@@ -95,7 +95,12 @@ require("quickLinkPage.php");
            data:{item:val},
            dataType:"text",
            success:function(data){
-               $(".table-body").append(data);
+               if(data !==""){
+                   $(".table-body").html(data);
+               }
+               else{
+                   $(".table-body").html("Nothing matches your search");
+               }
            }
            
            
