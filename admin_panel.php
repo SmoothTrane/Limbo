@@ -246,7 +246,8 @@ $(function(){
 
 
 
-$(".del").click(function(){
+$(".del").click(function(e){
+    e.stopPropagation();
     var row = $(this).closest("tr");
     var rowId = row.children(".id")[0].innerHTML;
 
